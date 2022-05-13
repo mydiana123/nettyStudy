@@ -63,8 +63,11 @@ public class TestPipeline {
                             public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
                                 log.debug("数据进入入站处理器3，此方法对读取到的数据进行操作");
                                 log.debug("在handler3向客户端channel内写入一些数据,看看是不是会被出站处理器处理到~~");
-                                ch.writeAndFlush(ctx.alloc().buffer().writeBytes("你好呀客户端，我是server".getBytes(StandardCharsets.UTF_8)));
+                                // ch.writeAndFlush(ctx.alloc().buffer().writeBytes("你好呀客户端，我是server".getBytes(StandardCharsets.UTF_8)));
 
+                                // 使用ctx对象写出数据 [注意，此对象的writeAndFlush会从当前处理器[handler3]开始 往前找 出栈处理器]
+                                // 而向ch写出数据。会从tail的handler开始向前找
+                                ctx.writeAndFlush(ctx.alloc().buffer().writeBytes("你好呀客户端，我是server".getBytes(StandardCharsets.UTF_8)));
                                 System.out.println("============");
                                 log.debug("看看handler3获得的数据是:{}" , (Student)msg);
                                 // super.channelRead(ctx, msg); ==> 这步可以省略，因为没有下一个入站处理器了。
