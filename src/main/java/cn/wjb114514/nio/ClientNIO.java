@@ -23,7 +23,7 @@ public class ClientNIO {
         }
 
         // 4.2连接成功后的操作
-        String str = "Hello,Server~";
+        String str = "Hello,TestRedis~";
         // byteBuffer提供了wrap方法，可以把一个字节数组包裹到buffer里，无需手动指定大小。生成的大小就是我们传入字节数组的大小
         ByteBuffer byteBuffer = ByteBuffer.wrap(str.getBytes(StandardCharsets.UTF_8));
         // 把buffer数据写入

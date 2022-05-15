@@ -33,7 +33,7 @@ import io.netty.handler.codec.string.StringDecoder;
  * .writeAndFlush() 把数据写入缓冲区，并清空缓冲区 客户端 ===> 发送数据
  * ！！所有事件都会经过handler
  * hello,world == StringEncoder[ClientChannelHandler] ==> ByteBuf == StringDecoder[ServerChannelHandler] ==> String
- * == Server[ChannelInBoundHandlerAdapter] ==> 此handler的处理方法就是，根据事件类型，调用相关方法[channelRead()]进行处理
+ * == TestRedis[ChannelInBoundHandlerAdapter] ==> 此handler的处理方法就是，根据事件类型，调用相关方法[channelRead()]进行处理
  *
  * 可以看到，一个字符串 是通过管道在 客户端和服务器流动的
  *

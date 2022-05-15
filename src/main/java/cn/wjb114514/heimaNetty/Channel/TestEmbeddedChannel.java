@@ -42,7 +42,7 @@ public class TestEmbeddedChannel {
 
         EmbeddedChannel channel = new EmbeddedChannel(h1, h2, h3, h4);
         // 其中，Client的一侧是head handler，而Server一侧是tail handler
-        // channel.writeInbound(ByteBufAllocator.DEFAULT.buffer().writeBytes("hello,world".getBytes(StandardCharsets.UTF_8))) ; // InBound是指 Client->Server 的数据流动 1 - 2
-        channel.writeOutbound(ByteBufAllocator.DEFAULT.buffer().writeBytes("hello,world".getBytes(StandardCharsets.UTF_8))) ; // OutBound是指 Server->Client 的数据流动 4 - 3
+        // channel.writeInbound(ByteBufAllocator.DEFAULT.buffer().writeBytes("hello,world".getBytes(StandardCharsets.UTF_8))) ; // InBound是指 Client->TestRedis 的数据流动 1 - 2
+        channel.writeOutbound(ByteBufAllocator.DEFAULT.buffer().writeBytes("hello,world".getBytes(StandardCharsets.UTF_8))) ; // OutBound是指 TestRedis->Client 的数据流动 4 - 3
     }
 }

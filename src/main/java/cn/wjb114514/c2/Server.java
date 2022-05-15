@@ -71,7 +71,7 @@ public class Server {
             // log.debug("connecting..."); // [在阻塞模式下accept阻塞在这里，没有客户端连接就等着，线程停止运行。]
             // 3.不断监听连接请求，accept方法就实现了tcp的三次握手四次挥手,并可以在服务器端获取客户端的socketChannel
             SocketChannel sc = ssc.accept();
-            // 当客户端连接后，12:17:26.809 [main] DEBUG cn.wjb114514.c2.Server - after connected...java.nio.channels.SocketChannel[connected local=/127.0.0.1:1145 remote=/127.0.0.1:50726]
+            // 当客户端连接后，12:17:26.809 [main] DEBUG cn.wjb114514.c2.TestRedis - after connected...java.nio.channels.SocketChannel[connected local=/127.0.0.1:1145 remote=/127.0.0.1:50726]
 
             if(sc != null) {
                 // 真正建立连接才打印。

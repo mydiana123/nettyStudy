@@ -19,7 +19,7 @@ import java.nio.charset.StandardCharsets;
  * A channel represents an open connection to an entity such as a hardware device,
  * a file, a network socket, or a program component that is capable of performing one or more distinct I/O operations,
  * for example reading or writing.
- * ctrl+h查看继承关系，其重要子类为:FileChannel,DatagramChannel(udp),ServerSocketChannel(Server),SocketChannel(client)[tcp]
+ * ctrl+h查看继承关系，其重要子类为:FileChannel,DatagramChannel(udp),ServerSocketChannel(TestRedis),SocketChannel(client)[tcp]
  * Server端有一个ServerSocketChannelImpl对象。主线程通过此对象，为每个客户端线程创建一个SocketChannelImpl对象
  * 可以认为SocketChannelImpl对象实现了服务器端线程和客户端线程的通讯
  * FileChannelImpl的常用方法:write(Buffer写入Channel) read(Buffer读取Channel)[方法作用的对象是Channel] transferForm(从目标通道拷贝数据到当前通道) transferTo
